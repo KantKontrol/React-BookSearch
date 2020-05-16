@@ -3,16 +3,16 @@ import "./index.css";
 
 function ResultCard(props){
     return (
-        <div class="col-10 mt-3 mx-auto result-card-style">
+        <div className="col-10 mt-3 mx-auto result-card-style">
             <div className="row" style={{ marginBottom: 10 + "px"}}>
                 <div className="col-6">
                     <h2>{props.title}</h2>
                     <h4>Written By: {props.auth}</h4>
                 </div>
                 <div className="col-6">
-                    <div class="btn-group" role="group">
-                        <button type="button" class="btn btn-secondary">View</button>
-                        <button type="button" class="btn btn-secondary">Save</button>                    
+                    <div className="btn-group" role="group">
+                        <a type="button" className="btn btn-secondary" href={props.link} >View</a>
+                        <button type="button" className="btn btn-secondary" onClick={() => props.handleSave(props)}>Save</button>                    
                     </div>
                 </div>
             </div>

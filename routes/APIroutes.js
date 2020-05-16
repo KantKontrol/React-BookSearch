@@ -1,4 +1,5 @@
 const Books = require("../models/books");
+const mongojs = require("mongojs");
 
 module.exports = function(app){
 
@@ -25,7 +26,7 @@ module.exports = function(app){
 
 
     app.get("/api/books/:id", ({id},res) => {
-        Books.findOne({_id: id}).then(data => {
+        Books.remove({_id: mongojs.ObjectId(id) }).then(data => {
             res.json(data);
         });
     });

@@ -8,7 +8,7 @@ function SearchForm(props){
             <label>{props.title}</label>
                 <input className="form-control" id="searchInput" placeholder="Search Here" value={props.value} onChange={props.handleSearchChange} />
             </div>
-            <button type="submit" className="btn btn-primary">Search</button>
+            <button type="submit" className="btn btn-primary" onClick={props.searchButton}>Search</button>
         </form>
     );
 }
