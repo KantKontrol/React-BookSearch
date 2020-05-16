@@ -18,6 +18,7 @@ mongoose.connect('mongodb://localhost/googlebooks', {
 });
 
 // Define API routes here
+require("./routes/APIroutes")(app);
 
 // Send every other request to the React app
 // Define any API routes before this runs
