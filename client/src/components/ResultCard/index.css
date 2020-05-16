@@ -1,0 +1,19 @@
+.result-card-style{
+    background-color: lightgray;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.card-horizontal {
+    display: flex;
+    flex: 1 1 auto;
+}
+
+.book-title {
+    float: left;
+
+}
+
+.btn-group {
+    float: right !important;
+}
