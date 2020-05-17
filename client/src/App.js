@@ -3,6 +3,7 @@ import {BrowserRouter, Route, Switch, Redirect} from "react-router-dom";
 import "./App.css";
 import Navbar from "./components/Navbar";
 import SearchPage from "./pages/SearchPage";
+import SavedPage from "./pages/SavedPage";
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
             <SearchPage />
         </Route>
         <Route exact path="/saved">
-            <SearchPage />
+            <SavedPage />
         </Route>
       </Switch>
     </BrowserRouter>

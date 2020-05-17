@@ -3,7 +3,6 @@ import Jumbotron from "../components/Jumbotron";
 import SearchForm from  "../components/SearchForm";
 import Results from "../components/Results";
 import API from "../utils/API";
-import { PromiseProvider } from "mongoose";
 
 function SearchPage() {
 
@@ -31,7 +30,6 @@ function SearchPage() {
         console.log(data);
     }
     
-    
     return (
         <div className="container-fluid">
             <div className="row">
@@ -47,7 +45,7 @@ function SearchPage() {
             </div>
 
             <div className="row">
-                <Results books={books} handleSave={handleSave} />
+                <Results books={books} save={true} handleSave={handleSave} />
             </div>
         
         </div>
