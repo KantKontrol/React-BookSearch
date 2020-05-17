@@ -19,7 +19,10 @@ function SavedPage(){
     }
 
     function handleDelete(id){
-
+        API.deleteBook(id).then(res => {
+            console.log(res);
+            loadSavedBooks();
+        });
     }
 
     return (

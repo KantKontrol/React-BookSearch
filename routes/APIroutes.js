@@ -4,7 +4,9 @@ const mongojs = require("mongojs");
 module.exports = function(app){
 
     app.get("/api/books", (req,res) => {
-        Books.find({}).then(data => {
+        Books.find({}, (error, data) => {
+            if(error) console.log(error);
+
             res.json(data);
         });
     });
@@ -14,20 +16,25 @@ module.exports = function(app){
         let data = req.body;
 
         Books.create({
+            _id: data.id,
             title: data.title,
             authors: data.authors,
             description: data.description,
             image: data.image,
             link: data.link
-        }).then(response => {
-            res.status(200).json(response);
+        }, (error) => {
+            if(error) console.log(error);
+
+            res.status(200).end();
         });
     });
 
 
-    app.get("/api/books/:id", ({id},res) => {
-        Books.remove({_id: mongojs.ObjectId(id) }).then(data => {
-            res.json(data);
+    app.delete("/api/books/:id", (req,res) => {
+        console.log(req.params.id);
+        Books.deleteOne({ _id: mongojs.ObjectId(req.params.id) }, (error) => {
+            if(error) console.log(error);
+            res.status(200).end();
         });
     });
 }

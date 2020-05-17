@@ -29,6 +29,7 @@ function SearchPage() {
     function handleSave(data){
        console.log(data);
        API.saveBook({
+            id: data.id,
             title: data.title,
             authors: data.auth,
             description: data.desc,

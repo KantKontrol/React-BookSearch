@@ -12,7 +12,7 @@ function ResultCard(props){
                 <div className="col-6">
                     <div className="btn-group" role="group">
                         <a type="button" className="btn btn-secondary" href={props.link} >View</a>
-                        {props.save ? <button type="button" className="btn btn-secondary" onClick={() => props.handleSave(props)}>Save</button> : <button type="button" className="btn btn-secondary" onClick={() => props.handleDelete(props)}>Delete</button>}                   
+                        {props.save ? <button type="button" className="btn btn-secondary" onClick={() => props.handleSave(props)}>Save</button> : <button type="button" className="btn btn-secondary" onClick={() => props.handleDelete(props.id)}>Delete</button>}                   
                     </div>
                 </div>
             </div>
