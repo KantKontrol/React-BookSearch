@@ -9,7 +9,7 @@ function Results(props){
             <div className="result-style">
                 <h1 className="display-4">Results</h1>
                 {
-                    books ? books.map(e => {
+                    books.length > 0 ? books.map(e => {
                         let data;
 
                         if(props.save){

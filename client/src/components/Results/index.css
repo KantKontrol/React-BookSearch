@@ -4,4 +4,6 @@
     width: 100%;
     background-color: #e9ecef;
     min-height: 500px;
+    border-radius: 20px;
+    padding: 10px;
 }
