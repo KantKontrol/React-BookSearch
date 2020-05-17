@@ -13,7 +13,7 @@ function Results(props){
                     books ? books.map(e => {
                         let data = e.volumeInfo;
 
-                        return <ResultCard key={e.id} id={e.id} title={data.title} auth={data.authors} img={data.imageLinks.thumbnail} desc={data.description} link={data.infoLink} save={props.save} handleSave={props.handleSave}/>
+                        return <ResultCard key={e.id} id={e.id} title={data.title} auth={data.authors} img={data.imageLinks.thumbnail} desc={data.description} link={data.infoLink} save={props.save} handleSave={props.handleSave} handleDelete={props.handleDelete}/>
                     }) : <h2>No Results Available</h2>
                 }
             </div>

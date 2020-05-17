@@ -1,4 +1,5 @@
 import  React, { useState } from "react";
+import mongojs from "mongojs";
 import Jumbotron from "../components/Jumbotron";
 import SearchForm from  "../components/SearchForm";
 import Results from "../components/Results";
@@ -27,7 +28,17 @@ function SearchPage() {
     }
 
     function handleSave(data){
-        console.log(data);
+       console.log(data);
+       API.saveBook({
+            title: data.title,
+            authors: data.auth,
+            description: data.desc,
+            image: data.img,
+            link: data.link
+        }).then(res => {
+            console.log(res)
+            console.log("Book Saved!");
+        });
     }
     
     return (
