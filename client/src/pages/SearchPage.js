@@ -19,7 +19,7 @@ function SearchPage() {
 
         API.searchGoogleBooks(search).then(res => {
             setBooks(res.data.items);
-            console.log(books);
+            setSearch("");
         })
         .catch(err => {
             console.log(err);
