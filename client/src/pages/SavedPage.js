@@ -8,12 +8,18 @@ function SavedPage(){
 
     const [savedBooks, setSavedBooks] = useState([]);
 
-    function useEffect(){
+    useEffect(() => {
+        loadSavedBooks();
+    }, [savedBooks]);
 
+    function loadSavedBooks(){
+        API.getSavedBooks().then(res => {
+            setSavedBooks(res.data);
+        });
     }
 
     function handleDelete(id){
-        
+
     }
 
     return (

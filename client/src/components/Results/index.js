@@ -4,16 +4,36 @@ import ResultCard from "../ResultCard";
 
 function Results(props){
     let books = props.books;
-    console.log(books);
     return (
         <div className="col-12">
             <div className="result-style">
                 <h1 className="display-4">Results</h1>
                 {
                     books ? books.map(e => {
-                        let data = e.volumeInfo;
+                        let data;
 
-                        return <ResultCard key={e.id} id={e.id} title={data.title} auth={data.authors} img={data.imageLinks.thumbnail} desc={data.description} link={data.infoLink} save={props.save} handleSave={props.handleSave} handleDelete={props.handleDelete}/>
+                        if(props.save){
+                            data = {
+                                id: e.id,
+                                title: e.volumeInfo.title,
+                                authors: e.volumeInfo.authors,
+                                img: e.volumeInfo.imageLinks.thumbnail,
+                                desc: e.volumeInfo.description,
+                                link: e.volumeInfo.infoLink
+                            };
+                        }
+                        else {
+                            data = {
+                                id: e._id,
+                                title: e.title,
+                                authors: e.authors,
+                                img: e.image,
+                                desc: e.description,
+                                link: e.link
+                            };
+                        }
+
+                        return <ResultCard key={data.id} id={data.id} title={data.title} auth={data.authors} img={data.img} desc={data.desc} link={data.link} save={props.save} handleSave={props.handleSave} handleDelete={props.handleDelete}/>
                     }) : <h2>No Results Available</h2>
                 }
             </div>
