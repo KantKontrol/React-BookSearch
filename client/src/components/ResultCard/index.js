@@ -18,7 +18,7 @@ function ResultCard(props){
                 <div className="col-2"></div>
                 <div className="col-2">
                 
-                        <a type="button" className="btn btn-secondary" href={props.link} >View</a>
+                        <a type="button" className="btn btn-secondary" target="_blank" rel="noopener noreferrer" href={props.link} >View</a>
                         {props.save ? <button type="button" className="btn btn-secondary" data-toggle="modal" data-target={"#" + props.id} onClick={() => props.handleSave(props)}>Save</button> : <button type="button" className="btn btn-secondary" onClick={() => props.handleDelete(props.id)}>Delete</button>}
                     
                 </div>
