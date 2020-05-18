@@ -1,5 +1,6 @@
 import React from "react";
 import "./index.css";
+import SaveModal from "../SaveModal";
 
 function ResultCard(props){
     return (
@@ -12,14 +13,15 @@ function ResultCard(props){
                 <div className="col-6">
                     <div className="btn-group" role="group">
                         <a type="button" className="btn btn-secondary" href={props.link} >View</a>
-                        {props.save ? <button type="button" className="btn btn-secondary" onClick={() => props.handleSave(props)}>Save</button> : <button type="button" className="btn btn-secondary" onClick={() => props.handleDelete(props.id)}>Delete</button>}
+                        {props.save ? <button type="button" className="btn btn-secondary" data-toggle="modal" data-target="#saveModal" onClick={() => props.handleSave(props)}>Save</button> : <button type="button" className="btn btn-secondary" onClick={() => props.handleDelete(props.id)}>Delete</button>}
                     </div>
                 </div>
+                <SaveModal title="You saved a book!" img={props.img} objectTitle={props.title} author={props.auth}/>
             </div>
             <div className="row">
                 <div className="col-2">
                     <div className="image">
-                        <img src={props.img} width="150px" height="150px" alt="thumbnail" />
+                        <img src={props.img} alt="thumbnail" />
                     </div>
                 </div>
                 <div className="col-10">

@@ -36,7 +36,6 @@ function SavedPage(){
             <div className="row">
                 <Results books={savedBooks}  save={false} handleDelete={handleDelete}/>
             </div>
-        
         </div>
     );
 }

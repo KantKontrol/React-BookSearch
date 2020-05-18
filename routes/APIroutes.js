@@ -32,7 +32,7 @@ module.exports = function(app){
 
     app.delete("/api/books/:id", (req,res) => {
         console.log(req.params.id);
-        Books.deleteOne({ _id: mongojs.ObjectId(req.params.id) }, (error) => {
+        Books.findByIdAndDelete(req.params.id, (error) => {
             if(error) console.log(error);
             res.status(200).end();
         });
